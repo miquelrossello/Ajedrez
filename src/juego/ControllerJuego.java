@@ -1,4 +1,4 @@
-package ajedrez;
+package juego;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -7,8 +7,8 @@ import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
-    private static Controller ourInstance = new Controller();
+public class ControllerJuego implements Initializable {
+    private static ControllerJuego ourInstance = new ControllerJuego();
 
     @FXML
     private
@@ -18,7 +18,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    public static Controller getInstance() {
+    public static ControllerJuego getInstance() {
         return ourInstance;
     }
 }
