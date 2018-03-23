@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import juego.ControllerJuego;
-import login.ControllerLogin;
+import Login.ControllerLogin;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Login/Login.fxml"));
         loader.setController(CONTROLLER);
         Parent root = loader.load();
         Scene scene = new Scene(root);
