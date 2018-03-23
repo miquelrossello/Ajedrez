@@ -1,11 +1,12 @@
 package login;
 
+import ajedrez.InterfaceControl;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerLogin implements Initializable {
+public class ControllerLogin implements Initializable, InterfaceControl {
     private static ControllerLogin ourInstance = new ControllerLogin();
 
 
