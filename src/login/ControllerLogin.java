@@ -1,4 +1,4 @@
-package Login;
+package login;
 
 import ajedrez.InterfaceControl;
 import com.jfoenix.controls.JFXButton;
@@ -15,9 +15,12 @@ public class ControllerLogin implements Initializable, InterfaceControl {
 
     @FXML
     private JFXTextField userInput;
+    @FXML
     private JFXPasswordField passwordInput;
+    @FXML
     private JFXButton buttonEnter;
 
+    @FXML
     public void doEnter() {
         String username = userInput.getText();
         String password = passwordInput.getText();

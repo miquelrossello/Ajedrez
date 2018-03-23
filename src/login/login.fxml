@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="mainPane" stylesheets="@styleLogin.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.ControllerLogin">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="mainPane" stylesheets="@styleLogin.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -38,7 +38,7 @@
                   <Insets top="10.0" />
                </padding>
             </Label>
-            <JFXTextField alignment="CENTER" focusColor="#4c4c4d" prefHeight="25.0" prefWidth="238.0" unFocusColor="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+            <JFXTextField fx:id="userInput" alignment="CENTER" focusColor="#4c4c4d" prefHeight="25.0" prefWidth="238.0" unFocusColor="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -53,12 +53,12 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <JFXPasswordField alignment="CENTER" focusColor="#4c4c4d" prefHeight="25.0" prefWidth="238.0" unFocusColor="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+            <JFXPasswordField fx:id="passwordInput" alignment="CENTER" focusColor="#4c4c4d" prefHeight="25.0" prefWidth="238.0" unFocusColor="RED" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXPasswordField>
-            <JFXButton onAction="#doEnter" prefHeight="45.0" prefWidth="106.0" ripplerFill="#909090" stylesheets="@styleLogin.css" text="Entrar" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+            <JFXButton fx:id="buttonEnter" onAction="#doEnter" prefHeight="45.0" prefWidth="106.0" ripplerFill="#909090" stylesheets="@styleLogin.css" text="Entrar" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="18.0" />
                </font>
