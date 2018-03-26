@@ -2,6 +2,7 @@ package ajedrez;
 
 import com.sun.javafx.application.LauncherImpl;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,13 +14,14 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Stage stage;
-    private ControllerLogin CONTROLLER = ControllerLogin.getInstance();
+    private Stage window;
+    private Scene sceneLogin, sceneRegister;
+    private ControllerLogin CONTROLLER_LOGIN = ControllerLogin.getInstance();
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
-        loader.setController(CONTROLLER);
+        loader.setController(CONTROLLER_LOGIN);
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
