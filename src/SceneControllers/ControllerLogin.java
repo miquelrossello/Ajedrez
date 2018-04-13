@@ -4,29 +4,20 @@ import com.jfoenix.controls.*;
 import connector_mysql.Connector;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ControllerLogin implements Initializable, InterfaceControl{
     ControlledScreens controlledScreens;
 
     @FXML
-    private JFXTextField userInput, r_usernameInput, r_nameInput, r_surnameInput;
+    private JFXTextField userInput;
     @FXML
-    private JFXPasswordField passwordInput, r_passwordInput, r_repeat_passwordInput;
+    private JFXPasswordField passwordInput;
     @FXML
-    private JFXButton buttonEnter, buttonGoRegister, r_registerButton;
-    @FXML
-    private JFXDatePicker birthdayInput;
-    @FXML
-    private JFXRadioButton radioButton_female, radioButton_male;
-    @FXML
-    private AnchorPane anchorPane_register, anchorPane_login;
+    private JFXButton buttonEnter, buttonGoRegister;
 
     @FXML
     public void goRegister() {
@@ -34,17 +25,25 @@ public class ControllerLogin implements Initializable, InterfaceControl{
     }
 
     @FXML
-    public void doRegister() { //Insertar los campos en la BD
-        System.out.println("Name: " + r_nameInput.getText() + "\nSurname: " + r_surnameInput.getText() + "\nUsername: " + r_usernameInput.getText() + "\nPassword: " + r_passwordInput.getText()
-            + "\nBirtday: " + birthdayInput.getValue().toString());
-    }
-
-    //Metodo testing funcional
-
-
-    @FXML
     public void doEnter() {
-        System.out.println("Must implement Login comprovation.");
+        //Consulta a la BD
+        if (userInput.getText() != null && userInput.getText() != "" && passwordInput.getText() != null && passwordInput.getText() != "") {
+            try {
+                Connection conn = Connector.connector("root", "1998");
+                Statement statement = conn.createStatement();
+                ResultSet rs = statement.executeQuery("Select contrasena from usuario where usuario='"+userInput.getText()+"'");
+                while(rs.next()) {
+                    System.out.println(rs.getString(1));
+                    System.out.println(passwordInput.getText());
+                    if (rs.getString(1).equals(passwordInput.getText())) {
+                        System.out.println("Allright!");
+                    }
+                }
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

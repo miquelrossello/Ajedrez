@@ -1,0 +1,11 @@
+.anchorPane {
+    -fx-background-image: url("../images/woodPattern.jpg");
+}
+
+.gamePane {
+    -fx-background-color: white;
+}
+
+.rightPane {
+    -fx-background-color: silver;
+}
